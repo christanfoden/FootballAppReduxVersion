@@ -1,13 +1,15 @@
 import React from 'react';
-import { Scene, Router } from 'react-native-router-flux';
-import { Container, StyleProvider,  Header, Left, Right, Icon, Button, Body } from 'native-base';
+import { View } from 'react-native';
+import { Scene, Router, Stack } from 'react-native-router-flux';
+import { Container, StyleProvider,  Header, Left, Right, Icon, Button, Body, Content } from 'native-base';
 import LoginForm from './components/LoginForm';
 import PlayersList from './components/PlayersList';
+import PlayerPage from './components/PlayerPage';
 import AppFooter from './components/appFooter';
+import Settings from './components/Settings';
 
 import getTheme from './themes/components';
 import OffkeyTheme from './themes/variables/OffkeyTheme';
-
 
 const RouterComponent = () => {
   return (
@@ -20,6 +22,8 @@ const RouterComponent = () => {
             </Scene>
             <Scene key="main">
               <Scene key="playersList" component={PlayersList} title="Players" />
+              <Scene key="playersPage" component={PlayerPage} title="Player" />
+              <Scene key="settings" component={Settings} title="Settings" />
             </Scene>
           </Scene>
         </Router>

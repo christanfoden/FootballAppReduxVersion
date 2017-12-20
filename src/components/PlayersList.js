@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { ListView, Text, View, TouchableOpacity } from 'react-native';
 import {
@@ -43,24 +44,29 @@ class PlayersList extends Component {
 
   renderRow(players) {
     return (
-      <TouchableOpacity onPress={() => this.props.playerSelect()}>
+      <TouchableOpacity>
         <PlayerItem player={players}/>
-        <Text>ok</Text>
       </TouchableOpacity>
     );
   }
 
   render() {
-    console.log(this);
+    // console.log(this);
 
     return (
-      <View>
-        <ListView
-          enableEmptySections
-          dataSource={this.dataSource}
-          renderRow={this.renderRow}
-        />
-      </View>
+      <Container>
+        <Content>
+          <View>
+            <ListView
+              enableEmptySections
+              dataSource={this.dataSource}
+              renderRow={this.renderRow}
+            />
+          </View>
+        </Content>
+        {/* <AppFooter /> */}
+      </Container>
+
     );
   }
 }
