@@ -1,6 +1,7 @@
 import _ from 'lodash';
+import firebase from 'firebase';
 import React, { Component } from 'react';
-import { ListView, Text, View, TouchableOpacity } from 'react-native';
+import { ListView, Text, View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import {
   Container,
   Header,
@@ -8,7 +9,7 @@ import {
   Card,
   CardItem,
   Thumbnail,
-  Button,
+  // Button,
   Icon,
   Left,
   Body,
@@ -19,11 +20,11 @@ import { connect } from 'react-redux';
 import PlayerItem from './PlayerItem';
 import AppFooter from './appFooter';
 import { playersFetch, playerSelect } from '../actions/'
+import { Button } from './common';
 
 class PlayersList extends Component {
   componentWillMount() {
     this.props.playersFetch();
-
     this.createDataSource(this.props);
   }
 
@@ -44,9 +45,9 @@ class PlayersList extends Component {
 
   renderRow(players) {
     return (
-      <TouchableOpacity>
+      <TouchableWithoutFeedback>
         <PlayerItem player={players}/>
-      </TouchableOpacity>
+      </TouchableWithoutFeedback>
     );
   }
 
@@ -54,19 +55,24 @@ class PlayersList extends Component {
     // console.log(this);
 
     return (
-      <Container>
-        <Content>
-          <View>
-            <ListView
-              enableEmptySections
-              dataSource={this.dataSource}
-              renderRow={this.renderRow}
-            />
-          </View>
-        </Content>
-        {/* <AppFooter /> */}
-      </Container>
-
+      <Content>
+        <ListView
+          enableEmptySections
+          dataSource={this.dataSource}
+          renderRow={this.renderRow}
+        />
+        {/* <CardItem style={{backgroundColor: '#383838', alignSelf: 'center', width: null}}>
+          <Button
+            onPress={() => firebase.auth().signOut()}
+            bordered
+            full
+            >
+            <Text>
+              Log Out
+            </Text>
+          </Button>
+        </CardItem> */}
+      </Content>
     );
   }
 }

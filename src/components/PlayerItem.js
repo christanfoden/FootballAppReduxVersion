@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   Text,
+  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
   LayoutAnimation,
@@ -46,26 +47,26 @@ class PlayerItem extends Component {
     } = this.props.player
 
     return(
-      // <Container>
-        <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
-          <View>
-            <Card>
-              <CardItem>
+        <TouchableOpacity onPress={this.onRowPress.bind(this)}>
+          {/* <View style={{backgroundColor: '#f8f8f8'}}> */}
+            {/* <Card style={{backgroundColor: '#f8f8f8'}}> */}
+              <CardItem style={{
+                borderRadius: 12,
+                backgroundColor: '#383838',
+                margin: 10
+              }}>
                 <Left>
-                  <Image source={{ uri: `${playerImgUrl}`}} style={{height: 100, width: null, flex: 1}}>
-                    <Text>{playerFirstName}</Text>
-                  </Image>
+                  <Image source={{ uri: `${playerImgUrl}`}} style={{height: 125, borderRadius: 7, width: null, flex: 1}} />
                   <Body>
-                    <Text title style={{ fontWeight: 'bold', fontSize: 15 }} >{playerFirstName} {playerLastName}</Text>
-                    <Text note >{playerClubCurrent}</Text>
-                    <Text note style={{ color: 'grey'}} >{playerPosition}</Text>
+                    <Text title style={{ color: 'white', fontWeight: 'bold', fontSize: 15 }} >{playerFirstName} {playerLastName}</Text>
+                    <Text note style={{ color: '#f8f8f8'}}>{playerClubCurrent}</Text>
+                    <Text note style={{ color: '#f8f8f8'}} >{playerPosition}</Text>
                   </Body>
                 </Left>
               </CardItem>
-            </Card>
-          </View>
-        </TouchableWithoutFeedback>
-      // </Container>
+            {/* </Card> */}
+          {/* </View> */}
+        </TouchableOpacity>
     );
   }
 }

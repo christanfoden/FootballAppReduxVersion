@@ -15,10 +15,15 @@ const RouterComponent = () => {
   return (
     <StyleProvider style={getTheme(OffkeyTheme)}>
       <Container>
-        <Router sceneStyle={{}}>
+        <Router
+          navigationBarStyle={styles.navBar}
+          titleStyle={styles.navBarTitle}
+          barButtonTextStyle={styles.barButtonTextStyle}
+          barButtonIconStyle={styles.barButtonIconStyle}
+          >
           <Scene key="root" hideNavBar>
             <Scene key="auth">
-              <Scene key="login" component={LoginForm} title="Please Login" />
+              <Scene key="login" component={LoginForm} title="Login" />
             </Scene>
             <Scene key="main">
               <Scene key="playersList" component={PlayersList} title="Players" />
@@ -31,5 +36,20 @@ const RouterComponent = () => {
     </StyleProvider>
   );
 };
+
+const styles = {
+  navBar: {
+    backgroundColor:'#383838'
+  },
+  navBarTitle: {
+    color: 'white'
+  },
+  barButtonTextStyle: {
+    color: 'white'
+  },
+  barButtonIconStyle: {
+    tintColor:'rgb(255,255,255)'
+  }
+}
 
 export default RouterComponent;

@@ -33,27 +33,36 @@ class PlayerPage extends Component {
       playerHeightCms,
       playerWeightKg,
       PlayerDescription,
-      PlayerYoutubePlaylistId
+      PlayerYoutubePlaylistId,
+      playerClubLogo
     } = this.props.player
     console.log(this.props);
 
     return(
       <Container>
-        <Content>
-          <Card>
-            <Image source={{uri: `${playerImgUrl}`}} style={{height: 200, width: null, flex: 1}}/>
-            <CardItem>
+        <Content style={{ backgroundColor: '#f8f8f8'}}>
+          <Card style={{ backgroundColor: '#f8f8f8'}}>
+            <Image source={{uri: `${playerImgUrl}`}} style={{ height: 260, width: null, borderRadius: 12, margin: 10  }}/>
+            <CardItem style={{ backgroundColor: '#383838', borderRadius: 12, margin: 10 }}>
               <Left>
-                <Thumbnail source={{ uri: `https://pbs.twimg.com/profile_images/935075006484221952/eXb9zUIl_400x400.jpg`}} />
+                <Thumbnail source={{ uri: `${playerClubLogo}`}} />
                 <Body>
-                  <Text title style={{ fontWeight: 'bold', fontSize: 15 }} >{playerFirstName} {playerLastName}</Text>
-                  <Text note >{playerClubCurrent}</Text>
+                  <Text title style={{ color: 'white', fontWeight: 'bold', fontSize: 15 }} >{playerFirstName} {playerLastName}</Text>
+                  <Text note style={{ color: 'white' }}>{playerClubCurrent}</Text>
                   <Text note style={{ color: 'grey'}} >{playerPosition}</Text>
                   <Text note style={{ color: 'grey'}} >Age: {playerAge}</Text>
                   <Text note style={{ color: 'grey'}} >Height: {playerHeightCms}</Text>
-                  <Text note style={{ color: 'grey'}} >Weight {playerWeightKg}</Text>
+                  <Text note style={{ color: 'grey'}} >Weight: {playerWeightKg}</Text>
                 </Body>
               </Left>
+            </CardItem>
+          </Card>
+          <Card style={{ backgroundColor: '#f8f8f8'}}>
+            <CardItem cardBody style={{ backgroundColor: '#383838', borderRadius: 12, margin: 10 }}>
+              <View style={{padding: 10}}>
+                <Text style={{ color: 'white', fontWeight: 'bold', paddingBottom: 7 }}>Description</Text>
+                <Text style={{ color: 'grey' }}>{PlayerDescription}</Text>
+              </View>
             </CardItem>
           </Card>
           <Card>
@@ -67,16 +76,8 @@ class PlayerPage extends Component {
               onChangeState={e => this.setState({ status: e.state })}
               onChangeQuality={e => this.setState({ quality: e.quality })}
               onError={e => this.setState({ error: e.error })}
-              style={{ alignSelf: 'stretch', height: 300 }}
+              style={{ alignSelf: 'stretch', height: 300, borderRadius: 12, margin: 10  }}
             />
-          </Card>
-          <Card>
-            <CardItem>
-                <Body>
-                  <Text>Description</Text>
-                  <Text style={{color: 'grey'}}>{PlayerDescription}</Text>
-                </Body>
-            </CardItem>
           </Card>
         </Content>
       </Container>

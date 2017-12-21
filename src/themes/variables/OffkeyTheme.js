@@ -214,7 +214,7 @@ export default {
   listBtnUnderlayColor: "#DDD",
 
   // Card
-  cardBorderColor: "#ccc",
+  cardBorderColor: "",
 
   // Changed Variable
   listItemPadding: platform === "ios" ? 10 : 12,

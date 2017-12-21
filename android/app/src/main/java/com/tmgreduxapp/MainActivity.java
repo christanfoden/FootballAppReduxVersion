@@ -1,6 +1,7 @@
 package com.tmgreduxapp;
 
 import com.facebook.react.ReactActivity;
+import com.evollu.react.fa.FIRAnalyticsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 
 public class MainActivity extends ReactActivity {
