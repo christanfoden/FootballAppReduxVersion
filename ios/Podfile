@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'tmgReduxApp' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for tmgReduxApp
+  pod 'FirebaseAnalytics'
+  pod 'Firebase/Messaging'
+
+  # target 'tmgReduxApp-tvOSTests' do
+  #   inherit! :search_paths
+  #   # Pods for testing
+  # end
+
+  pod 'react-native-fcm', :path => '../node_modules/react-native-fcm'
+
+  # target 'tmgReduxAppTests' do
+  #   inherit! :search_paths
+  #   # Pods for testing
+  # end
+
+end
+
+# target 'tmgReduxApp-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for tmgReduxApp-tvOS
+
+  # target 'tmgReduxApp-tvOSTests' do
+  #   inherit! :search_paths
+  #   # Pods for testing
+  # end
+
+# end

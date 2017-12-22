@@ -55,10 +55,10 @@ class LoginForm extends Component {
               <Image source={require('../img/tmgLogo.png')} style={{alignSelf: 'center', height: 50, width: 200 }}/>
             </CardItem>
             <CardItem style={{backgroundColor: '#383838', alignSelf: 'center'}}>
-              <Text>
-                <Text style={{color: '#f8f8f8'}}>Private player portfolio</Text>
-                <Text style={{color: '#f8f8f8'}}>Please insure you have legal consent of the fund before accessing</Text>
-              </Text>
+              <View>
+                <Text style={{color: '#f8f8f8', fontWeight: 'bold', fontSize: 15, paddingBottom: 7, textAlign: 'center'}}>Private player portfolio</Text>
+                <Text style={{color: '#f8f8f8', textAlign: 'center'}}>Please insure you have legal consent of the fund/agent before accessing.</Text>
+              </View>
             </CardItem>
             <CardItem style={{backgroundColor: '#383838', alignSelf: 'center', width: null, paddingTop: 35}}>
               <Input
@@ -84,6 +84,12 @@ class LoginForm extends Component {
 
             <CardItem style={{backgroundColor: '#383838', alignSelf: 'center', width: null}}>
               {this.renderButton()}
+            </CardItem>
+
+            <CardItem style={{backgroundColor: '#383838', alignSelf: 'center'}}>
+              <View style={{paddingTop: 20}}>
+                <Text style={{color: '#f8f8f8', fontWeight: 'bold', fontSize: 10, paddingBottom: 7, textAlign: 'center'}}>©2018 TMG Football Limited</Text>
+              </View>
             </CardItem>
           </Card>
         </View>
